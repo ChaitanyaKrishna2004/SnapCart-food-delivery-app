@@ -1,21 +1,4 @@
-# Node modules
-node_modules/
-
-# Parcel build output
-dist/
-.cache/
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS-specific
-.DS_Store
-Thumbs.db
-
-# VS Code
-.vscode/
-
-# Environment files
-.env
+/node_modules
+.parcel-cache
+/dist
+/coverage

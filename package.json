@@ -1,7 +1,33 @@
 {
   "dependencies": {
-    "parcel": "^2.15.4",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "npm": "^11.4.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "name": "3.1-react",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChaitanyaKrishna2004/Learning_React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChaitanyaKrishna2004/Learning_React/issues"
+  },
+  "homepage": "https://github.com/ChaitanyaKrishna2004/Learning_React#readme",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.15.4",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10"
   }
 }
