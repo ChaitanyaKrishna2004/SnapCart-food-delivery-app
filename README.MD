@@ -95,5 +95,39 @@ Parcel is a zero-config bundler used for modern web apps like React.
 
 📦 Prod build: Use npx parcel build index.html (removes .parcel-cache, optimized for deployment).
 
-DAY-3
+DAY - 3
 #Babel
+
+DAY - 4
+Config driven Ui
+Project online delivary app
+Join function in javasecript.
+Map filter and reduce
+In react Index using as key bad practice
+
+DAY - 5 Let's get Hooked
+Why do we use react ? -> it make u write less code and build the large scarle production.
+Never ever keep the hard corded at in our app.
+
+Expor are two types
+
+---> Export Default export/import
+export default Component;
+import Component from "path";
+
+---> Named Export/Import
+export const Component;
+import {Component} from "path";
+Can we do both at a time???
+
+react can do the fast dom maculation.
+
+React hooks ->utilti function
+It is normal js function had supeer power.
+State Variable - Super powerful variable.
+--->Use State ->Superpowerfull state variable in react.
+const [ListofRestaurants] = useState([]);
+Whene ever the state variable update the react will rerender compontenet
+--->Use Effect ->
+
+Reconciliation Algorithm(React Fiber)

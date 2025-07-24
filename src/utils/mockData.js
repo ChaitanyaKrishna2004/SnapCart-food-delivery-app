@@ -1,67 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
-
-console.log("logo.png");
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://github.com/kittuparuchuri12344/img/blob/main/logo.png?raw=true"
-          alt="logo"
-        />
-        <div className="nav-items">
-          <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Cart</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const {
-    cloudinaryImageId,
-    name,
-    cuisines,
-    avgRating,
-    costForTwo,
-    deliveryTime,
-  } = resData;
-  return (
-    <div className="res-card">
-      <img
-        className="reslogo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.cloudinaryImageId
-        }
-        alt="res-logo"
-      />
-      <div className="res-card-content">
-        <h3>{name}</h3>
-        <h4>{cuisines.join(", ")}</h4>
-        <div className="res-card-rating-price">
-          <span className="res-card-rating">
-            {avgRating} <FontAwesomeIcon icon={faStar} />
-          </span>
-          <span className="res-card-price">{costForTwo}</span>
-        </div>
-        <h5>{deliveryTime}</h5>
-      </div>
-    </div>
-  );
-};
-
 const resList = {
   data: [
     {
@@ -325,31 +261,124 @@ const resList = {
       avgRating: 4.4,
       deliveryTime: "15-20 mins",
     },
+    {
+      id: "1035581",
+      name: "Big Bowl",
+      cloudinaryImageId:
+        "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/4e10e592-948e-4117-bb54-1dff7f816d77_1035581.jpg",
+      locality: "Attapur",
+      areaName: "M-Qube Mall",
+      costForTwo: "₹250 for two",
+      cuisines: ["Chinese", "Tibetan", "Desserts"],
+      avgRating: 3.8,
+      deliveryTime: 71,
+      lastMileTravel: 5.9,
+      slaString: "70-80 mins",
+      isPromoted: true,
+    },
+    {
+      id: "68010",
+      name: "New Deccan Bawarchi",
+      cloudinaryImageId:
+        "FOOD_CATALOG/IMAGES/CMS/2024/6/28/3e71cc69-6ced-4c13-86a0-e157cdc3f966_71bceadb-3da7-439f-9d12-17e0df7e8ddd.jpg",
+      locality: "Langar Houz",
+      areaName: "Sun City",
+      costForTwo: "₹300 for two",
+      cuisines: ["North Indian", "Biryani", "Chinese"],
+      avgRating: 3.9,
+      deliveryTime: 43,
+      lastMileTravel: 1.9,
+      slaString: "40-50 mins",
+      isPromoted: false,
+    },
+    {
+      id: "927441",
+      name: "Wholesome Bowlsome",
+      cloudinaryImageId:
+        "RX_THUMBNAIL/IMAGES/VENDOR/2025/5/13/c4a1b40a-fcd1-4b6a-8d9a-48448581e436_927441.jpg",
+      locality: "Attapur",
+      areaName: "Attapur",
+      costForTwo: "₹250 for two",
+      cuisines: ["Biryani", "North Indian", "Punjabi", "South Indian"],
+      avgRating: 4.2,
+      deliveryTime: 42,
+      lastMileTravel: 2,
+      slaString: "40-50 mins",
+      isPromoted: true,
+    },
+    {
+      id: "922926",
+      name: "Potful - Claypot Biryanis",
+      cloudinaryImageId:
+        "RX_THUMBNAIL/IMAGES/VENDOR/2025/5/13/ffabf001-64d2-4da5-8de0-81f4c26c78ff_922926.jpg",
+      locality: "Hydershakote",
+      areaName: "Attapur",
+      costForTwo: "₹250 for two",
+      cuisines: [
+        "Biryani",
+        "North Indian",
+        "Kebabs",
+        "Mughlai",
+        "Desserts",
+        "Beverages",
+      ],
+      avgRating: 4.3,
+      deliveryTime: 59,
+      lastMileTravel: 2,
+      slaString: "55-65 mins",
+      isPromoted: false,
+    },
+    {
+      id: "1045406",
+      name: "Curry Home",
+      cloudinaryImageId:
+        "RX_THUMBNAIL/IMAGES/VENDOR/2025/2/15/e3e22f40-3a35-4843-9ea6-cc686396372b_1045406.jpg",
+      locality: "Attapur",
+      areaName: "Attapur",
+      costForTwo: "₹300 for two",
+      cuisines: ["Biryani"],
+      avgRating: 3.8,
+      deliveryTime: 56,
+      lastMileTravel: 1,
+      slaString: "55-65 mins",
+      isPromoted: true,
+    },
+    {
+      id: "412478",
+      name: "Biryani Ustad",
+      cloudinaryImageId: "zx7whbrnyonwal5dj8p1",
+      locality: "Hemagiri Nagar",
+      areaName: "Suncity & Bandlaguda",
+      costForTwo: "₹320 for two",
+      cuisines: ["Biryani"],
+      avgRating: 4.3,
+      deliveryTime: 29,
+      lastMileTravel: 0.2,
+      slaString: "25-30 mins",
+      isPromoted: false,
+    },
+    {
+      id: "57212",
+      name: "Behrouz Biryani",
+      cloudinaryImageId: "a4ffed13eb197c6df43dfe1c756560e5",
+      locality: "Hydershahkot Village",
+      areaName: "Sun City",
+      costForTwo: "₹500 for two",
+      cuisines: [
+        "Biryani",
+        "Kebabs",
+        "Mughlai",
+        "Lucknowi",
+        "Hyderabadi",
+        "Desserts",
+        "Beverages",
+      ],
+      avgRating: 3.9,
+      deliveryTime: 40,
+      lastMileTravel: 1.5,
+      slaString: "35-40 mins",
+      isPromoted: true,
+    },
   ],
 };
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="Search">Search</div>
-      <div className="res-container">
-        {resList.data.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="App">
-      <Header />
-      <Body />
-      {/* Footer */}
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;

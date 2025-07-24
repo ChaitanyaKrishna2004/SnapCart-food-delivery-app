@@ -1,44 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 /* header css start */
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
-    position: relative;
+    border: none;
+    background: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-radius: 12px;
+    padding: 16px 32px;
+    margin: 24px auto 32px auto;
+    max-width: 1100px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-.logo-container{
+
+.logo-container {
     display: flex;
     align-items: center;
+    gap: 24px;
 }
-.logo{
-    /* padding-left: 10px; */
-    width: 150px;
+
+.logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 150px;
 }
 
 .nav-items {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    margin-left: 32px;
 }
 
-.nav-items  ul{
+.nav-items ul {
     display: flex;
-    justify-content: center;
+    gap: 32px;
     list-style: none;
     margin: 0;
-    padding: 40px;
-    font-size: 24px;
-
+    padding: 0;
+    font-size: 20px;
 }
 
 .nav-items ul li {
-    padding: 10px;
-    margin: 10px;
+    padding: 0;
+    margin: 0;
 }
 
-.nav-items li {
-    display: flex;
-    align-items: space-between;
+.nav-items ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-items ul li a:hover {
+    background: #e3eafc;
+    color: #1976d2;
 }
 
 /* header css end  */
@@ -47,6 +71,7 @@
 .res-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; 
 }
 
 
@@ -130,3 +155,21 @@
     font-weight: 400;
 }
 /* Card css end */
+
+.filter-btn{
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+    padding: 20px 10px;
+    background-color: rgb(102, 155, 198);
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+}
+
+.filter-btn:hover {
+    background-color: rgb(82, 135, 178);
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(102, 155, 198, 0.2);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
