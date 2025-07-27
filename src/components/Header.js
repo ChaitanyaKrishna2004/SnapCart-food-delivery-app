@@ -19,6 +19,26 @@ const Header = () => {
             <li>
               <a href="#">Cart</a>
             </li>
+            <li className="dropdown">
+              <a href="#">Menu</a>
+              <ul className="Filter-Menu">
+                <li>
+                  <a>Desserts</a>
+                </li>
+                <li>
+                  <a>Biryani</a>
+                </li>
+                <li>
+                  <a>Beverages</a>
+                </li>
+                <li>
+                  <a>Ice Cream</a>
+                </li>
+                <li>
+                  <a>Bakery</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
