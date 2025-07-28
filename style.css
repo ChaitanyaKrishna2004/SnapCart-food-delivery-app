@@ -39,6 +39,8 @@
 
 .nav-items ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 32px;
     list-style: none;
     margin: 0;
@@ -58,9 +60,28 @@
     padding: 8px 16px;
     border-radius: 8px;
     transition: background 0.2s, color 0.2s;
+    display: block;
 }
 
 .nav-items ul li a:hover {
+    background: #e3eafc;
+    color: #1976d2;
+}
+
+.Login {
+    color: #333;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.Login:hover {
     background: #e3eafc;
     color: #1976d2;
 }
@@ -155,8 +176,36 @@
     font-weight: 400;
 }
 /* Card css end */
+.search {
+    display: flex;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
 
-.filter-btn{
+.search-box {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.btnsearch {
+    padding: 10px 20px;
+    border-radius: 16px;
+    border: none;
+    background: #669bc6;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btnsearch:hover {
+    background: #5279b2;
+}
+.filter-btn
+{
     display: block;
     margin: 10px auto;
     cursor: pointer;
