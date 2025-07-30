@@ -7,45 +7,47 @@ const Body = () => {
   const [ListOfRestaurants, setListOfRestraunt] = useState(resList.data);
   const [filteredRestaurant, setfilteredRestaurant] = useState(resList.data);
 
+  //call the usesate on the top.
+  //usestate variables should not of component ontop and if else , for loop.
   const [searchText, setSearchText] = useState("");
 
   //whenever state variables update, reat triggers a reconcilation cycle (re-renders the component).
   console.log("rerender");
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // const fetchData = async () => {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-  //   );
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
 
-  //   const json = await data.json();
+    const json = await data.json();
 
-  //   // Find the card that contains restaurant information
-  //   const restaurantCard = json.data.cards.find(
-  //     (card) => card.card?.card?.gridElements?.infoWithStyle?.restaurants
-  //   );
+    // Find the card that contains restaurant information
+    const restaurantCard = json.data.cards.find(
+      (card) => card.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
 
-  //   if (restaurantCard) {
-  //     setListOfRestraunt(
-  //       restaurantCard.card.card.gridElements.infoWithStyle.restaurants.map(
-  //         (restaurant) => restaurant.info
-  //       )
-  //     );
-  //     setfilteredRestaurant(
-  //       restaurantCard.card.card.gridElements.infoWithStyle.restaurants.map(
-  //         (restaurant) => restaurant.info
-  //       )
-  //     );
-  //   }
-  //   console.log(json);
-  // };
-  // //Conditional Rendering
-  // if (ListOfRestaurants.length === 0) {
-  //   return <Shimmer />;
-  // }
+    if (restaurantCard) {
+      setListOfRestraunt(
+        restaurantCard.card.card.gridElements.infoWithStyle.restaurants.map(
+          (restaurant) => restaurant.info
+        )
+      );
+      setfilteredRestaurant(
+        restaurantCard.card.card.gridElements.infoWithStyle.restaurants.map(
+          (restaurant) => restaurant.info
+        )
+      );
+    }
+    console.log(json);
+  };
+  //Conditional Rendering
+  if (ListOfRestaurants.length === 0) {
+    return <Shimmer />;
+  }
 
   return ListOfRestaurants.length === 0 ? (
     <Shimmer />
