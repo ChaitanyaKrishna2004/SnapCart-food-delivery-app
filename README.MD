@@ -131,3 +131,6 @@ Whene ever the state variable update the react will rerender compontenet
 --->Use Effect ->
 
 Reconciliation Algorithm(React Fiber)
+
+why we need to use the superprops?
+In React class components, super(props) is used to call the constructor of the parent class (React.Component) and to pass the props object to it. This is necessary for proper initialization of the component and for accessing this.props within the constructor.

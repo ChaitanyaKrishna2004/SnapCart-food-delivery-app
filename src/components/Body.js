@@ -13,7 +13,6 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   //whenever state variables update, reat triggers a reconcilation cycle (re-renders the component).
-  console.log("rerender");
 
   useEffect(() => {
     fetchData();
