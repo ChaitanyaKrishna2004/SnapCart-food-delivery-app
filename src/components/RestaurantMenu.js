@@ -7,8 +7,9 @@ import menuList from "../utils/menuData";
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
-  const [resInfo, setresInfo] = useState(menuList);
+  const [resInfo] = useState(menuList);
   console.log(resInfo);
+
   const { name, cuisines, avgRating, costForTwoMessage, locality } =
     resInfo.data[0].data.cards[2].card.card.info;
 
