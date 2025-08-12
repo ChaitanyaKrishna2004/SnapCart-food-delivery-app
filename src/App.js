@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
@@ -7,8 +7,13 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+// import Grocery from "./components/Grocery";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import Shimmer from "./components/Shimmer";
+
+const Grocery = lazy(() => import("./components/Grocery"));
+
 const AppLayout = () => {
   return (
     <div className="App">
@@ -35,6 +40,15 @@ const appRouter = createBrowserRouter([
       {
         path: "/Contact",
         element: <Contact />,
+      },
+
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "restaurants/:resId",

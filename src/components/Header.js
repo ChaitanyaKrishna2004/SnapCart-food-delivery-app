@@ -1,12 +1,13 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlinestatus";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
+  const OnlineStatus = useOnlineStatus();
   // if no dependency array => useeffect is called on ever render.
-  // if dependency array is empty = [] => useEffect is called on onlyinitial render(just once)
+  // if dependency array is empty = [] => useEffect is called on onlyinitial render(just once).
   // if dependency array is empty [btnNameReact] => called evrytime btnNameReact is updated.
   useEffect(() => {
     // fetchData();
@@ -18,6 +19,7 @@ const Header = () => {
         <img className="logo" src={LOGO_URL} alt="logo" />
         <div className="nav-items">
           <ul>
+            <li>OnlineStatus : {OnlineStatus ? "🟢" : "🔴"}</li>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -28,7 +30,7 @@ const Header = () => {
               <Link to="/contact">Contact Us</Link>
             </li>
             <li>
-              <a href="#">Cart</a>
+              <Link href="#">Cart</Link>
             </li>
             <li>
               <button
@@ -41,6 +43,9 @@ const Header = () => {
               >
                 {btnNameReact}
               </button>
+            </li>
+            <li>
+              <Link to="grocery">Grocery</Link>
             </li>
           </ul>
         </div>

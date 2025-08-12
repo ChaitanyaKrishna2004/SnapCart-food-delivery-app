@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
+import useOnlineStatus from "../utils/useOnlinestatus";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
@@ -44,6 +45,13 @@ const Body = () => {
     }
     console.log(json);
   };
+
+  const OnlineStatus = useOnlineStatus();
+  if (OnlineStatus === false) {
+    return (
+      <h1>Looks like you are ofline!! Please check you internet connetion</h1>
+    );
+  }
   // //Conditional Rendering
   // if (ListOfRestaurants.length === 0) {
   //   return <Shimmer />;
