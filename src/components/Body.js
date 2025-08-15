@@ -8,9 +8,9 @@ import { Link } from "react-router";
 const Body = () => {
   const [ListOfRestaurants, setListOfRestraunt] = useState(resList.data);
   const [filteredRestaurant, setfilteredRestaurant] = useState(resList.data);
-
   //call the usesate on the top.
   //usestate variables should not of component ontop and if else , for loop.
+
   const [searchText, setSearchText] = useState("");
 
   //whenever state variables update, reat triggers a reconcilation cycle (re-renders the component).
@@ -43,9 +43,10 @@ const Body = () => {
         )
       );
     }
-    console.log(json);
+    // console.log(json);
   };
 
+  console.log(ListOfRestaurants);
   const OnlineStatus = useOnlineStatus();
   if (OnlineStatus === false) {
     return (
@@ -61,46 +62,49 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="search">
-        <input
-          type="text"
-          className="search-box"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        ></input>
-        <button
-          className="btnsearch"
-          onClick={() => {
-            //Filter the restarunt card and update the UI
-            //searchText
-            console.log(searchText);
+      <div className="flex items-center">
+        <div className="search m-4 p-4">
+          <input
+            type="text"
+            className="border border-solid border-black"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          ></input>
+          <button
+            className="px-4 py-1 bg-blue-200 mx-4 rounded-lg"
+            onClick={() => {
+              //Filter the restarunt card and update the UI
+              //searchTextx
+              console.log(searchText);
 
-            const filteredRestaurant = ListOfRestaurants.filter((res) =>
-              res.name.toLowerCase().includes(searchText.toLowerCase())
-            );
+              const filteredRestaurant = ListOfRestaurants.filter((res) =>
+                res.name.toLowerCase().includes(searchText.toLowerCase())
+              );
 
-            setfilteredRestaurant(filteredRestaurant);
-          }}
-        >
-          Search
-        </button>
+              setfilteredRestaurant(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <div className="search m-4 p-4">
+          <button
+            className="px-4 py-2 bg-gray-100 rounded-lg"
+            onClick={() => {
+              // console.log("hello");
+              const filteredList = ListOfRestaurants.filter(
+                (res) => res.avgRating > 4
+              );
+              setListOfRestraunt(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="filter">
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = ListOfRestaurants.filter(
-              (res) => res.avgRating > 4
-            );
-            setListOfRestraunt(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
-      </div>
-      <div className="res-container">
+      <div className="flex flex-wrap items-center justify-center">
         {filteredRestaurant.map((restaurant) => (
           <Link key={restaurant.id} to={"/restaurants/" + restaurant.id}>
             <RestaurantCard resData={restaurant} />

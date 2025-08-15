@@ -10,9 +10,8 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        <h1>About Class Component</h1>
+        <h1>About Class Component</h1> npx tailwindcss init
         <h2>This is learning react</h2>
-
         <UserClass name={"Chaitanya (Class)"} />
       </div>
     );

@@ -14,25 +14,27 @@ const Header = () => {
   }, [btnNameReact]);
 
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="logo" />
+    <div className="flex justify-between items-center bg-blue-200">
+      <div className="flex items-center">
+        <img className="w-40 px-4 py-4" src={LOGO_URL} alt="logo" />
         <div className="nav-items">
-          <ul>
-            <li>OnlineStatus : {OnlineStatus ? "🟢" : "🔴"}</li>
-            <li>
+          <ul className="flex justify-center px-75">
+            <li className="px-4">
+              OnlineStatus : {OnlineStatus ? "🟢" : "🔴"}
+            </li>
+            <li className="px-4">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="px-4">
               <Link to="/about">About Us</Link>
             </li>
-            <li>
+            <li className="px-4">
               <Link to="/contact">Contact Us</Link>
             </li>
-            <li>
+            <li className="px-4">
               <Link href="#">Cart</Link>
             </li>
-            <li>
+            <li className="px-4 ">
               <button
                 className="Login"
                 onClick={() => {
