@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import resList from "../utils/mockData";
 import useOnlineStatus from "../utils/useOnlinestatus";
 import { useEffect, useState } from "react";
@@ -13,40 +13,41 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
   //whenever state variables update, reat triggers a reconcilation cycle (re-renders the component).
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+  // const fetchData = async () => {
+  //   const data = await fetch(
+  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  //   );
 
-    const json = await data.json();
+  //   const json = await data.json();
 
-    // Find the card that contains restaurant information
-    const restaurantCard = json.data.cards.find(
-      (card) => card.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+  //   // Find the card that contains restaurant information
+  //   const restaurantCard = json.data.cards.find(
+  //     (card) => card.card?.card?.gridElements?.infoWithStyle?.restaurants
+  //   );
 
-    if (restaurantCard) {
-      setListOfRestraunt(
-        restaurantCard.card.card.gridElements.infoWithStyle.restaurants.map(
-          (restaurant) => restaurant.info
-        )
-      );
-      setfilteredRestaurant(
-        restaurantCard.card.card.gridElements.infoWithStyle.restaurants.map(
-          (restaurant) => restaurant.info
-        )
-      );
-    }
-    // console.log(json);
-  };
+  //   if (restaurantCard) {
+  //     setListOfRestraunt(
+  //       restaurantCard.card.card.gridElements.infoWithStyle.restaurants.map(
+  //         (restaurant) => restaurant.info
+  //       )
+  //     );
+  //     setfilteredRestaurant(
+  //       restaurantCard.card.card.gridElements.infoWithStyle.restaurants.map(
+  //         (restaurant) => restaurant.info
+  //       )
+  //     );
+  //   }
+  //   // console.log(json);
+  // };
 
-  console.log(ListOfRestaurants);
   const OnlineStatus = useOnlineStatus();
   if (OnlineStatus === false) {
     return (
@@ -77,7 +78,6 @@ const Body = () => {
             onClick={() => {
               //Filter the restarunt card and update the UI
               //searchTextx
-              console.log(searchText);
 
               const filteredRestaurant = ListOfRestaurants.filter((res) =>
                 res.name.toLowerCase().includes(searchText.toLowerCase())
@@ -107,7 +107,11 @@ const Body = () => {
       <div className="flex flex-wrap items-center justify-center">
         {filteredRestaurant.map((restaurant) => (
           <Link key={restaurant.id} to={"/restaurants/" + restaurant.id}>
-            <RestaurantCard resData={restaurant} />
+            {restaurant.isPromoted || restaurant.promoted ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

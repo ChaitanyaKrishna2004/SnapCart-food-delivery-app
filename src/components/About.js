@@ -17,7 +17,6 @@ class About extends React.Component {
     );
   }
 }
-
 // const About = () => {
 //   return (
 //     <div>
