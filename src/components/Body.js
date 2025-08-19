@@ -74,7 +74,7 @@ const Body = () => {
             }}
           ></input>
           <button
-            className="px-4 py-1 bg-blue-200 mx-4 rounded-lg"
+            className="px-4 py-1 bg-blue-200 mx-4 rounded-lg cursor-pointer"
             onClick={() => {
               //Filter the restarunt card and update the UI
               //searchTextx
@@ -91,7 +91,7 @@ const Body = () => {
         </div>
         <div className="search m-4 p-4">
           <button
-            className="px-4 py-2 bg-gray-100 rounded-lg"
+            className="px-4 py-2 bg-gray-100 rounded-lg cursor-pointer"
             onClick={() => {
               // console.log("hello");
               const filteredList = ListOfRestaurants.filter(
