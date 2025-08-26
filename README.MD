@@ -105,6 +105,12 @@ Join function in javasecript.
 Map filter and reduce
 In react Index using as key bad practice
 
+// if no dependency array => useeffect is called on ever render.
+// if dependency array is empty = [] => useEffect is called on onlyinitial render(just once).
+// if dependency array is empty [btnNameReact] => called evrytime btnNameReact is updated.
+useEffect(() => {
+// fetchData();
+}, [btnNameReact]);
 DAY - 5 Let's get Hooked
 Why do we use react ? -> it make u write less code and build the large scarle production.
 Never ever keep the hard corded at in our app.
@@ -134,3 +140,12 @@ Reconciliation Algorithm(React Fiber)
 
 why we need to use the superprops?
 In React class components, super(props) is used to call the constructor of the parent class (React.Component) and to pass the props object to it. This is necessary for proper initialization of the component and for accessing this.props within the constructor.
+
+
+ Redux Toolkit
+ -- Install @reduxjs/toolkit and react-redux
+ -- Build Our Store
+ -- Connect out store to our app
+ -- create slices(cart slice)
+ -- dispatch(action)
+ -- Read the data using selector

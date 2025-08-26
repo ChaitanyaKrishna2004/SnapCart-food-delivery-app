@@ -21,7 +21,7 @@ class UserClass extends react.Component {
     this.setState({
       userInfo: json,
     });
-    console.log(json);
+    // console.log(json);
   }
   render() {
     const { name } = this.state.userInfo;

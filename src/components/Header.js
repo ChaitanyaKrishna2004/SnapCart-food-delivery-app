@@ -1,17 +1,22 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlinestatus";
+import UserContext from "../utils/UserContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
+
   const OnlineStatus = useOnlineStatus();
-  // if no dependency array => useeffect is called on ever render.
-  // if dependency array is empty = [] => useEffect is called on onlyinitial render(just once).
-  // if dependency array is empty [btnNameReact] => called evrytime btnNameReact is updated.
-  useEffect(() => {
-    // fetchData();
-  }, [btnNameReact]);
+
+  const { loggedInUser } = useContext(UserContext);
+
+  //Subscribing to the store using a selector.
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   return (
     <div className="flex justify-between items-center bg-blue-200">
@@ -32,11 +37,14 @@ const Header = () => {
               <Link to="/contact">Contact Us</Link>
             </li>
             <li className="px-4">
-              <Link href="#">Cart</Link>
+              <Link to="/cart">
+                <FontAwesomeIcon icon={faCartShopping} /> ({cartItems.length}{" "}
+                items)
+              </Link>
             </li>
-            <li className="px-4 ">
+            <li className="px-4">
               <button
-                className="Login"
+                className="Login cursor-pointer"
                 onClick={() => {
                   btnNameReact === "Login"
                     ? setBtnNameReact("Logout")
@@ -46,9 +54,7 @@ const Header = () => {
                 {btnNameReact}
               </button>
             </li>
-            <li>
-              <Link to="grocery">Grocery</Link>
-            </li>
+            <li className="px-4">{loggedInUser}</li>
           </ul>
         </div>
       </div>

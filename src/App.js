@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, Suspense } from "react";
+import React, { lazy, Suspense, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
@@ -7,20 +7,36 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-// import Grocery from "./components/Grocery";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStor";
+import Cart from "./components/Cart";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
+  const [UserName, setUserName] = useState();
+
+  useEffect(() => {
+    const data = {
+      name: "Chaitanya",
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div className="App">
-      <Header />
-      <Outlet />
-      {/* Footer */}
-    </div>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: UserName, setUserName }}>
+        <div className="App">
+          <Header />
+          <Outlet />
+          {/* Footer */}
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -40,6 +56,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/Contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
 
       {
