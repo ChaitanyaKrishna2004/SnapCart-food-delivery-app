@@ -141,11 +141,29 @@ Reconciliation Algorithm(React Fiber)
 why we need to use the superprops?
 In React class components, super(props) is used to call the constructor of the parent class (React.Component) and to pass the props object to it. This is necessary for proper initialization of the component and for accessing this.props within the constructor.
 
+Redux Toolkit
+-- Install @reduxjs/toolkit and react-redux
+-- Build Our Store
+-- Connect out store to our app
+-- create slices(cart slice)
+-- dispatch(action)
+-- Read the data using selector
 
- Redux Toolkit
- -- Install @reduxjs/toolkit and react-redux
- -- Build Our Store
- -- Connect out store to our app
- -- create slices(cart slice)
- -- dispatch(action)
- -- Read the data using selector
+# Types of testing that developer can do
+
+-- Unit Testing
+-- Integration Testing
+-- End to End Testing(E2E)
+
+# Setting up Testing in our app
+
+- Install React Testing Library
+- Installed jest
+- Installed Babel dependencies - on the jest website
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest Configuration npx create-jest
+- Install jsdom libarary separately
+- Install @babel/preset-react - to jsx work in test cases
+- Include @babel/preset-react inside my bable config
+- Install @testing-library/jest-dom

@@ -92,11 +92,11 @@ const Body = () => {
           <button
             className="px-4 py-2 bg-gray-100 rounded-lg cursor-pointer"
             onClick={() => {
-              // console.log("hello");
+              // Filter top rated restaurants from the full list
               const filteredList = ListOfRestaurants.filter(
                 (res) => res.avgRating > 4
               );
-              setListOfRestraunt(filteredList);
+              setfilteredRestaurant(filteredList);
             }}
           >
             Top Rated Restaurants
