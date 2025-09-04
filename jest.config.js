@@ -197,4 +197,8 @@ const config = {
   // watchman: true,
 };
 
-module.exports = config;
+// module.exports = config;
+module.exports = {
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
+};

@@ -1,0 +1,16 @@
+{
+    "id": "43836",
+    "name": "McDonald's",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/3/4716f54a-61ad-4178-8265-51066cacbbd2_43836.jpg",
+    "locality": "MG Road",
+    "areaName": "Ashok Nagar",
+    "costForTwo": "₹400 for two",
+    "cuisines": [
+        "Burgers",
+        "Beverages",
+        "Cafe",
+        "Desserts"
+    ],
+    "avgRating": 4.4,
+    "deliveryTime": "25-30 mins"
+}
