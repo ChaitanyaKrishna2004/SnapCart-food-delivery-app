@@ -6,7 +6,7 @@ A **React-based food ordering web application** that allows users to browse rest
 
 ## 🚀 Live Demo
 
-[Click here to view the app](https://your-netlify-link.netlify.app)
+[Click here to view the app](https://snapcartdelivery.netlify.app/)
 
 ---
 
