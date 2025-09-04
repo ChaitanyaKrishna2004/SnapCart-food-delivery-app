@@ -53,7 +53,7 @@ A **React-based food ordering web application** that allows users to browse rest
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/food-ordering-app.git
+git clone https://github.com/ChaitanyaKrishna2004/SnapCart-food-delivery-app.git
 
 # Navigate to the project directory
 cd food-ordering-app
