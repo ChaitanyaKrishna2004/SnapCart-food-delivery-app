@@ -1,169 +1,113 @@
-🧠 DAY 1
-📦 CDN (Content Delivery Network)
-CDNs like unpkg or jsDelivr let you include React in your project without installing it locally.
-You just add script tags in your HTML to load React and ReactDOM.
+# 🍽️ Food Ordering App
 
-🌐 Cross-Origin
-Cross-origin refers to making requests across different domains, ports, or protocols.
-Browsers block these by default for security. To allow it, servers use CORS headers.
+A **React-based food ordering web application** that allows users to browse restaurants, view menus, and place orders seamlessly. The app is optimized for performance using **Parcel bundler**, **React Router**, **Redux Toolkit**, and **custom hooks**.
 
-⚛️ React Element & JSX
-React.createElement() returns a JavaScript object, not an HTML element.
+---
 
-When this object is rendered to the DOM using ReactDOM, it becomes an actual HTML element.
+## 🚀 Live Demo
 
-JSX (JavaScript XML) is syntactic sugar for React.createElement() – it’s converted to JS code by Babel.
+[Click here to view the app](https://your-netlify-link.netlify.app)
 
-Example:
+---
 
-const heading = React.createElement(
-"h1",
-{ id: "heading" },
-"Hello, React! 😁"
-);
+## 📌 Features
 
-React.createElement → ReactElement (JS object) → DOM (HTML element)
+- ✅ Browse restaurant listings
+- ✅ View detailed menus for each restaurant
+- ✅ Add items to the cart and update quantities
+- ✅ State management using **Redux Toolkit**
+- ✅ Dynamic routing using **React Router**
+- ✅ **Shimmer UI** for loading states
+- ✅ **Lazy Loading** for optimized performance
+- ✅ Responsive design with **Tailwind CSS**
 
-🧠 DAY 2
-🧱 React Components
-React components are building blocks of UI. There are two types:
+---
 
-1. Class-based Components (Old way)
-   Uses ES6 class syntax
+## 🛠️ Tech Stack
 
-Has lifecycle methods (like componentDidMount)
+- **Frontend**: React, React Router, Redux Toolkit
+- **Styling**: Tailwind CSS
+- **Bundler**: Parcel
+- **State Management**: Redux Toolkit
+- **Deployment**: Netlify
 
-2. Functional Components (Modern way)
-   A JavaScript function that returns JSX
+---
 
-Simpler and more popular with Hooks support
+## 📂 Project Structure
 
-✅ Example of a Functional Component:
-jsx
-Copy
-Edit
-const HeadingComponent = () => (
+```
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── redux/
+│   ├── utils/
+├── public/
+├── package.json
+└── README.md
+```
 
-  <div id="container">
-    <Title />
-    <h1>This is a React Functional Component</h1>
-  </div>
-);
+---
 
-#Parcel
+## ⚙️ Installation & Setup
 
-🚀 Parcel Overview (for React Development)
-Parcel is a zero-config bundler used for modern web apps like React.
+```bash
+# Clone the repository
+git clone https://github.com/your-username/food-ordering-app.git
 
-🔧 Development build is automatically optimized and fast.
+# Navigate to the project directory
+cd food-ordering-app
 
-🌐 Local server starts with live reload for development.
+# Install dependencies
+npm install
 
-🧠 Hot Module Replacement (HMR) updates HTML/CSS/JS without full reload.
+# Start development server
+npm start
 
-⚙️ File watching algorithm is written in C++ for performance.
+# Build for production
+npm run build
+```
 
-⚡ Caching ensures super fast rebuilds.
+---
 
-🖼️ Image optimization is built-in during production.
+## 🔑 Environment Variables
 
-🧹 Minification reduces file sizes by removing extra spaces and comments.
+Create a `.env` file in the root and add:
 
-📦 Bundling combines all your files into optimized output.
+```
+REACT_APP_API_URL=your_api_endpoint
+```
 
-🗜️ Compression helps reduce bandwidth and improves load speed.
+---
 
-🔑 Consistent hashing supports long-term caching in browsers.
+## 🖼️ Screenshots
 
-✂️ Code splitting loads only what’s needed per route or module.
+![alt text](./image/image.png)
+![alt text](./image/image-1.png)
 
-📤 Differential bundling creates separate bundles for modern and older browsers.
+---
 
-🌍 Browser list support allows targeting specific browser versions.
+## 🔗 API Source
 
-🛠️ Diagnostics give detailed error messages and hints.
+This project fetches data from [Swiggy Public API](https://www.swiggy.com) or mock data in `utils/mockData.js`.
 
-🧯 Error handling is built-in for smooth dev experience.
+---
 
-🔐 HTTPS support for secure local development.
+## 🧰 Deployment
 
-🌲 Tree shaking removes unused code automatically.
+Deployed on **Netlify**:
 
-🧱 Different dev and production bundles with automatic switching.
+- Build Command: `npm run build`
+- Publish Directory: `dist`
 
-📜 Transitive dependencies are handled automatically (no need to track them manually).
+---
 
-📦 Prod build: Use npx parcel build index.html (removes .parcel-cache, optimized for deployment).
+## 🤝 Contributing
 
-DAY - 3
-#Babel
+Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
 
-DAY - 4
-Config driven Ui
-Project online delivary app
-Join function in javasecript.
-Map filter and reduce
-In react Index using as key bad practice
+---
 
-// if no dependency array => useeffect is called on ever render.
-// if dependency array is empty = [] => useEffect is called on onlyinitial render(just once).
-// if dependency array is empty [btnNameReact] => called evrytime btnNameReact is updated.
-useEffect(() => {
-// fetchData();
-}, [btnNameReact]);
-DAY - 5 Let's get Hooked
-Why do we use react ? -> it make u write less code and build the large scarle production.
-Never ever keep the hard corded at in our app.
+## 📜 License
 
-Expor are two types
-
----> Export Default export/import
-export default Component;
-import Component from "path";
-
----> Named Export/Import
-export const Component;
-import {Component} from "path";
-Can we do both at a time???
-
-react can do the fast dom maculation.
-
-React hooks ->utilti function
-It is normal js function had supeer power.
-State Variable - Super powerful variable.
---->Use State ->Superpowerfull state variable in react.
-const [ListofRestaurants] = useState([]);
-Whene ever the state variable update the react will rerender compontenet
---->Use Effect ->
-
-Reconciliation Algorithm(React Fiber)
-
-why we need to use the superprops?
-In React class components, super(props) is used to call the constructor of the parent class (React.Component) and to pass the props object to it. This is necessary for proper initialization of the component and for accessing this.props within the constructor.
-
-Redux Toolkit
--- Install @reduxjs/toolkit and react-redux
--- Build Our Store
--- Connect out store to our app
--- create slices(cart slice)
--- dispatch(action)
--- Read the data using selector
-
-# Types of testing that developer can do
-
--- Unit Testing
--- Integration Testing
--- End to End Testing(E2E)
-
-# Setting up Testing in our app
-
-- Install React Testing Library
-- Installed jest
-- Installed Babel dependencies - on the jest website
-- Configure Babel
-- Configure Parcel Config file to disable default babel transpilation
-- Jest Configuration npx create-jest
-- Install jsdom libarary separately
-- Install @babel/preset-react - to jsx work in test cases
-- Include @babel/preset-react inside my bable config
-- Install @testing-library/jest-dom
+This project is licensed under the **MIT License**.
