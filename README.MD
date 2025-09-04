@@ -70,16 +70,6 @@ npm run build
 
 ---
 
-## 🔑 Environment Variables
-
-Create a `.env` file in the root and add:
-
-```
-REACT_APP_API_URL=your_api_endpoint
-```
-
----
-
 ## 🖼️ Screenshots
 
 ![alt text](./image/image.png)
@@ -107,7 +97,3 @@ Deployed on **Netlify**:
 Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
 
 ---
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
